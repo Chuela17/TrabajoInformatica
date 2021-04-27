@@ -5,4 +5,4 @@ class Carta{
     int numcarta;
     string palo;
   Carta(int, string);
-}
+};
