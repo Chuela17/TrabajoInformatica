@@ -4,6 +4,7 @@
 
 class MontonCrece: public Monton {
 public:
+    MontonCrece();
     MontonCrece(stack<Carta>);
     Carta CogerCarta();
 };

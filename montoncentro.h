@@ -6,6 +6,7 @@ class MontonCentro: public MontonCrece {
 private:
     string palo;
 public:
+    MontonCentro();
     MontonCentro(stack<Carta>, string);
     void DejarCarta(Carta);
 };

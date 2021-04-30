@@ -1,5 +1,9 @@
 #include "montoncentro.h"
 
+MontonCentro::MontonCentro():MontonCrece() {
+
+}
+
 MontonCentro::MontonCentro(stack<Carta> cartas, string palo):MontonCrece(cartas) {
     this->palo = palo;
 }

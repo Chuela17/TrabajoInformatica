@@ -1,5 +1,9 @@
 #include "montoncrece.h"
 
+MontonCrece::MontonCrece() {
+
+}
+
 MontonCrece::MontonCrece(stack<Carta> cartas):Monton(cartas) {
 
 }
