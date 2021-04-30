@@ -6,16 +6,14 @@
 using namespace std;
 
 vector<Carta> barajeo(vector<Carta> baraja){
-   int i=0;
-   time_t t;
 
-   //n = 40;
+   time_t t;
 
    //Inicialización de srand//
    srand((unsigned) time(&t));
 
    //Bucle de salteado de números//
-   i=0;
+   int i=0;
    for (i=0;i<=40;i++){
 
    int n1 = rand() % 40;
