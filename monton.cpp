@@ -1,11 +1,23 @@
 #include "monton.h"
 
+Monton::Monton() {
+
+}
+
 Monton::Monton(stack<Carta> cartas) {
     this->cartas = cartas;
 }
 
 bool Monton::EstaVacio() {
     return cartas.empty();
+}
+
+bool Monton::GetVisible() {
+    return this->visible;
+}
+
+void Monton::SetVisible(bool visible) {
+    this->visible = visible;
 }
 
 Carta Monton::CogerCarta() {
@@ -33,3 +45,6 @@ void Monton::DejarCarta(Monton cartas) {
     }
 }
 
+void Monton::SetMonton(stack<Carta> cartas) {
+    this->cartas = cartas;
+}
