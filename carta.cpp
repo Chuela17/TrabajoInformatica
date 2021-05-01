@@ -1,8 +1,13 @@
 #include "carta.h"
 
-Carta::Carta(int numero, string palo) {
+Carta::Carta(int numero, string palo, string direccion) {
     this->numcarta = numero;
     this->palocarta = palo;
+    this->direccioncarta = direccion;
+}
+
+Carta::~Carta() {
+
 }
 
 int Carta::GetNumcarta() {
@@ -11,4 +16,8 @@ int Carta::GetNumcarta() {
 
 string Carta::GetPalocarta() {
     return this->palocarta;
+}
+
+string Carta::GetDireccioncarta() {
+    return this->direccioncarta;
 }
