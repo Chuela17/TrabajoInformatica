@@ -8,11 +8,14 @@ class Carta {
 private:
     int numcarta;
     string palocarta;
+    string direccioncarta;
 
 public:
-    Carta(int, string);
+    Carta(int, string, string);
+    ~Carta();
     int GetNumcarta();
     string GetPalocarta();
+    string GetDireccioncarta();
 };
 
 #endif // CARTA_H
