@@ -19,10 +19,10 @@ vector<Carta> barajeo(vector<Carta> baraja){
    int n1 = rand() % 40;
    int n2 = rand() % 40;
 
-   Carta aux(0,"");
-   aux=baraja[n1];
-   baraja[n1]=baraja[n2];
-   baraja[n2]=aux;
+   Carta aux(0, "", "");
+   aux = baraja[n1];
+   baraja[n1] = baraja[n2];
+   baraja[n2] = aux;
    }
    return baraja;
 }
