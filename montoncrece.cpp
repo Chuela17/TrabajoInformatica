@@ -4,7 +4,11 @@ MontonCrece::MontonCrece() {
 
 }
 
-MontonCrece::MontonCrece(stack<Carta> cartas):Monton(cartas) {
+MontonCrece::MontonCrece(stack<Carta> cartas, int id):Monton(cartas, id) {
+
+}
+
+MontonCrece::~MontonCrece() {
 
 }
 
