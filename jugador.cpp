@@ -1,14 +1,25 @@
 #include "jugador.h"
-#include <iostream>
 
-Jugador::Jugador(Monton *monton_novisible, Monton *monton_visible, string nombre) {
+Jugador::Jugador() {
+
+}
+
+Jugador::Jugador(Monton monton_novisible, Monton monton_visible, string nombre) {
     this->monton_novisible = monton_novisible;
     this->monton_visible = monton_visible;
     this->nombre = nombre;
 }
 
+Jugador::~Jugador() {
+
+}
+
 Carta Jugador::CogerCarta() {
-    return this->monton_novisible->CogerCarta();
+    return this->monton_novisible.CogerCarta();
+}
+
+bool Jugador::ComprobarDejarCarta(Carta carta) {
+    return abs(carta.GetNumcarta() - this->monton_visible.ConsultarCarta().GetNumcarta()) == 1;
 }
 
 void Jugador::DejarCarta(Carta carta, Monton *monton) {
@@ -16,27 +27,21 @@ void Jugador::DejarCarta(Carta carta, Monton *monton) {
         throw "No se puede dejar la carta";
     }
 
-    if (monton != this->monton_visible) {
-        if (abs(carta.GetNumcarta() - monton->ConsultarCarta().GetNumcarta()) != 1) {
-            throw "No se puede dejar la carta";
-        }
-    }
+    monton->DejarCarta(carta);
+}
 
-    if (abs(carta.GetNumcarta() - monton->ConsultarCarta().GetNumcarta()) != 1) {
-        //pierdesturnojaja
-    }
-
+void Jugador::DejarCarta(Carta carta, MontonCentro *monton) {
     monton->DejarCarta(carta);
 }
 
 Monton *Jugador::GetMontonNoVisible() {
-    return this->monton_novisible;
+    return &this->monton_novisible;
 }
 
 Monton *Jugador::GetMontonVisible() {
-    return this->monton_visible;
+    return &this->monton_visible;
 }
 
 bool Jugador::SinCartas() {
-    return this->monton_visible->EstaVacio() && this->monton_novisible->EstaVacio();
+    return this->monton_visible.EstaVacio() && this->monton_novisible.EstaVacio();
 }
