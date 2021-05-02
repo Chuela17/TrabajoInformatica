@@ -1,14 +1,12 @@
-#include <carta.h>
-#include <crearmazo.h>
-#include <vector>
-#include <string>
-#include <iostream>
+#include "mainwindow.h"
 
+#include <QApplication>
 
-using namespace std;
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+    MainWindow w;
+    w.showMaximized();
 
-int main(){
-    vector<Carta> prueba=crearmazo();
-    vector<Carta> mazobarajado=barajeo(prueba);
-    return 0;
+    return a.exec();
 }
