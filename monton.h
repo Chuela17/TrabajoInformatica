@@ -9,18 +9,24 @@ class Monton {
 private:
     stack<Carta> cartas;
     bool visible = true;
+    int identificador;
 
 public:
-    Monton();
-    Monton(stack<Carta>); //Constructor
-    bool EstaVacio(); //Comprobar si hay cartas en el montón
-    bool GetVisible();
-    void SetVisible(bool); // Cuando defina un monton no visible hay que usar el setter
-    Carta CogerCarta(); //Coger una nueva carta de los mazos de los jugadores
-    Carta ConsultarCarta(); //Miramos la carta del montón, sin sacarla
-    void DejarCarta(Carta);//Deja carta (Polimorfismo, se va a usar con un stack en la siguiente)
-    void DejarCarta(Monton); //Rellenar mazo
-    void SetMonton(stack<Carta> cartas); //Inicializar el stack de cartas
+    Monton(); // Constructor vacío
+    Monton(stack<Carta>, int); // Constructor
+    ~Monton(); // Destructor
+    bool EstaVacio(); // Comprobar si hay cartas en el montón
+    bool GetVisible(); // Obtener si el montón es de tipo visible o no
+    void SetVisible(bool); // Definir el valor del atributo visible del motón
+    Carta CogerCarta(); // Coger una nueva carta del montón
+    Carta ConsultarCarta(); // Obtener la información de la carta que se encuentra en la parte superior
+                            // de la pila del montón
+    void DejarCarta(Carta); // Dejar una única carta en un montón
+    void DejarCarta(Monton *); // Dejar un montón sobre otro, para pasar las cartas visibles a no visibles
+                               //cuando sea necesario
+    void SetMonton(stack<Carta>); // Inicializar el stack de cartas
+    int GetIdentificador(); // Obtener el identificador del montón
+    stack<Carta> GetStackCartas(); // Obtener la pila de cartas del montón
 };
 
 #endif // MONTON_H
